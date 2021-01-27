@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/search-box.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,900;1,900&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>Search Bar</title>
+</head>
+
+<body>
+    <div class="main-section row">
+        <div class="col-md-7">
+            <p class="title">Weather Forcast</p>
+        </div>
+        <div class="col-md-5">
+            <input id="autocomplete" list="cities" class="form-control" onchange="changeWeatherData()" onkeyup="cityResultsBuilder()" placeholder="Enter a City name" type="text" />
+        </div>
+        <datalist id="cities">
+        </datalist>
+    </div>
+
+    <script src="../js/search-bar.js"></script>
+    <script src="../js/fetchwether-data.js"></script>
+</body>
+
+</html>

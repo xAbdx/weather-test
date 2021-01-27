@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/search-box.css">
+    <link rel="stylesheet" href="styles/chart.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="styles/PWA-4-style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,900;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
+
+<body style="background-color: #83b7f1;">
+
+    <div class="boss-card">
+        <div class="left">
+            <div class="main-section row">
+                <div class="col-md-7">
+                    <p class="title">Weather Forcast</p>
+                </div>
+                <div class="col-md-5">
+                    <input id="autocomplete" list="cities" class="form-control" onchange="changeWeatherData()"
+                        onkeyup="cityResultsBuilder()" placeholder="Enter a City name" type="text" />
+                </div>
+                <datalist id="cities">
+                </datalist>
+            </div>
+
+            <div class="chart-card">
+                <div class="head">
+                    <span class="info">Weather</span>
+                    <span class="highest-temp-style">Highest temp <span
+                            id="highest-temp">30</span><span>°C</span></span>
+                    <span class="lowest-temp-style">Lowest temp <span id="lowest-temp">30</span><span>°C</span></span>
+                    <div class="list-of-days">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle font-style" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Today
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#" onclick="today()">Today</a>
+                                <a class="dropdown-item" href="#" onclick="tomorrow()">Tomorrow</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <canvas id="my-chart"></canvas>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="column">
+                <div class="sections">
+                    <div class="summary-sections">
+                        <div class="summary-weather-information">
+                            <div class="today-summary">
+                                <div class="cloud-icon-div">
+                                    <i id="cloud-icon" class="fas fa-cloud"></i>
+                                </div>
+                                <div id="row-of-summary-of-day">
+                                    <span class="today" id="date">Today</span>
+                                    <span>Fri, 11 NOV</span>
+                                </div>
+                            </div>
+                            <div class="tempreture-and-location-summary">
+                                <h1 id="tempreture">29<sup id="temp-degree">&#8451;</sup></h1>
+                                <span id="location">Delhi, India</span><br>
+                                <span id="description">Feels like <span id="actual-heat">32</span> &#8226; Sunset <span
+                                        id="sunset-time">18:15</span></span>
+                            </div>
+                            <div class="other-info-summary">
+                                <div class="wind-speed-div">
+                                    <i class="fas fa-wind"></i>
+                                    <span id="wind-speed">12 m/h </span>
+                                </div>
+                                <div class="humidity-div">
+                                    <i class="fas fa-compass"></i>
+                                    <span id="humidity">55%</span>
+                                </div>
+                                <div class="pressure-div">
+                                    <i class="fas fa-arrow-down"></i>
+                                    <span id="pressure">99 pa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/fetchwether-data.js"></script>
+    <script src="js/search-bar.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="js/PWA-14.js"></script>
+</body>
+
+</html>

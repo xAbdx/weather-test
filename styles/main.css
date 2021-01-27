@@ -1,0 +1,31 @@
+body {
+    background-color: #83b7f1;
+    margin: 0%;
+    padding: 0%;
+}
+
+.boss-card {
+    height: 100vh;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.left {
+    height: 90vh;
+    width: 70%;
+    background-color: #f2fbff;
+    border-radius: 50px 0px 0px 50px;
+}
+
+.right {
+    height: 90vh;
+    width: 30%;
+    background-image: url(../assets/img/right-bar.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    border-radius: 0px 50px 50px 0px;
+}
